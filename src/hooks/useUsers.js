@@ -5,8 +5,8 @@ export const useUsers = () => {
 
     const [users, setUsers] = useState(null)
 
-    const fecthUsers = () => {
-       getUsers().then(newusers => setUsers(newusers))
+    const fecthUsers = (number = false) => {
+       getUsers(number).then(newusers => setUsers(newusers))
     }
 
     useEffect(() => fecthUsers(), [])

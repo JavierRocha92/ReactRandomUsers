@@ -3,14 +3,17 @@ import { useState } from "react";
 import "./Card.css";
 // eslint-disable-next-line no-unused-vars
 export const Card = ({ name, user, image, age }) => {
-    
-    const {follow, setFollow} = useState(false)
-    
-    const handleClick = () => {
-        setFollow(!follow)
-    }
+  const [follow, setFollow] = useState(false);
+  const [liked, setLiked] = useState(false);
 
-    const textButton = (follow) ? 'Following' : 'Follow'
+  const handleFollow = () => {
+    setFollow(!follow);
+  };
+  const handLiked = () => {
+    setLiked(!liked);
+  };
+
+  const textButton = follow ? "Following" : "Follow";
   return (
     // <!-- aside card profile matt groening-->
     <div className="card card--aside mt-4 col-12 m-2 position-realative">
@@ -33,7 +36,15 @@ export const Card = ({ name, user, image, age }) => {
           <i className="fa-brands m-3 fs-2 fa-linkedin card__icon--aside card__icon--blue"></i>
         </div>
         <div className="cars__buttons d-flex justify-content-center">
-          <p href="#" className="btn bg-primary text-light m-2" onClick={handleClick}>
+          <p
+            href="#"
+            className={
+              follow
+                ? "btn bg-secondary text-light m-2"
+                : "btn bg-primary text-light m-2"
+            }
+            onClick={handleFollow}
+          >
             {textButton}
           </p>
           <p href="#" className="btn bg-primary text-light m-2">
@@ -47,7 +58,15 @@ export const Card = ({ name, user, image, age }) => {
           <i className="fa-regular fa-comment"></i>&nbsp;&nbsp;16K
         </p>
         <p className="card_footer__text">
-          <i className="fa-regular fa-heart"></i>&nbsp;&nbsp;22.3K
+          <i
+            className={
+              liked
+                ? "fa-solid fa-heart text-danger"
+                : "fa-regular fa-heart"
+            }
+            onClick={handLiked}
+          ></i>
+          &nbsp;&nbsp;22.3K
         </p>
         <p className="card_footer__text">
           <i className="fa-solid fa-square-share-nodes"></i>&nbsp;&nbsp;6.8K
