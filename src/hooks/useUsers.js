@@ -5,11 +5,8 @@ export const useUsers = () => {
 
     const [users, setUsers] = useState(null)
 
-    const fecthUsers = async () => {
-        const users = await getUsers()
-        console.log(users)
-        // setUsers(await getUsers())
-        console.log(users)
+    const fecthUsers = () => {
+       getUsers().then(newusers => setUsers(newusers))
     }
 
     useEffect(() => fecthUsers(), [])

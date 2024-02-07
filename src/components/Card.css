@@ -1,0 +1,27 @@
+/* aside */
+.card--aside{
+    height: 400px !important;
+    width: 300px !important;
+}
+.card__header{
+    height: 30%;
+    background-color: rgba(247,215,86);
+}
+.card-img-top{
+    width: 40%;
+    top: 20px;
+    left: 50%;
+    transform: translate(-50%);
+}
+.card__icon--red:hover{
+    color: red;
+}
+.card__icon--magenta:hover{
+    color: magenta;
+}
+.card__icon--blue:hover{
+    color: blue;
+}
+.card__icon--skyblue:hover{
+    color: skyblue;
+}
